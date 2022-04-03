@@ -2,16 +2,15 @@ import {
   Box,
   Flex,
   Grid,
-  GridItem,
   Heading,
   Icon,
   IconButton,
   Image,
   Text,
-  ModalOverlay,useDisclosure ,Button,Modal,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter
+  ModalOverlay,useDisclosure ,Modal,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter
 } from "@chakra-ui/react";
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
-import data from "../content";
+import data from "../Content";
 import React, { useState, useEffect} from "react";
 const AboutPage =() => {
   const [scroll, setScroll] = useState({
@@ -166,7 +165,7 @@ const AboutPage =() => {
             <Image
               rounded="md"
               w="full"
-              h="80vh"
+              h="75vh"
               src={image}
               alt="image"
             />

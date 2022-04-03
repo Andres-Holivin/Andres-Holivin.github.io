@@ -3,7 +3,7 @@ import { IoArrowDown } from "react-icons/io5";
 import "animate.css";
 import { IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll/modules";
-import data from "../content";
+import data from "../Content";
 
 const HomePage= () => {
   return (
