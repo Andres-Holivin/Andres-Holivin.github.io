@@ -1,0 +1,62 @@
+{
+  "experience": [
+    {
+      "title": "Bachelor Degree",
+      "company": "Bina Nusantara University",
+      "start": "2019",
+      "end": "Present",
+      "image": "image/binus.jpeg"
+    },
+    {
+      "title": "Freshmen Leader",
+      "company": "Bina Nusantara University",
+      "start": "2021",
+      "end": "2021",
+      "image": "image/binus.jpeg"
+    },
+    {
+      "title": "Recruitment Trainer",
+      "company": "Bina Nusantara IT Division",
+      "start": "2020",
+      "end": "2020",
+      "image": "image/itBinus.jpeg"
+    },
+    {
+      "title": "Associate Member",
+      "company": "Bina Nusantara IT Division",
+      "start": "2020",
+      "end": "2021",
+      "image": "image/itBinus.jpeg"
+    },
+    {
+      "title": "Junior Programmer",
+      "company": "Bina Nusantara IT Division",
+      "start": "2021",
+      "end": "Present",
+      "image": "image/itBinus.jpeg"
+    }
+  ],
+  "certificat": [
+    { "photo": "" },
+    { "photo": "" },
+    { "photo": "" },
+    { "photo": "" },
+    { "photo": "" },
+    { "photo": "" },
+    { "photo": "" }
+  ],
+  "project": [
+    {
+      "title": "ListTo",
+      "desc": "",
+      "tech": "Java, Adroid, Rest-Api",
+      "photo": ""
+    },
+    {
+      "title": "Keypedia",
+      "desc": "",
+      "tech": "Laravel, MySql",
+      "photo": ""
+    }
+  ]
+}
