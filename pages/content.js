@@ -5,7 +5,7 @@ import {
   FaInstagramSquare,
   FaLinkedin
 } from "react-icons/fa";
-module.exports = {
+const Content = {
   "contact": [{
       "action": "https://github.com/holivin21",
       "icon": <Icon key={1} as={FaGithubSquare} color="white" boxSize={8} />,
@@ -101,4 +101,4 @@ module.exports = {
     }
   ]
 }
-// export default Content;
+module.exports={Content};
