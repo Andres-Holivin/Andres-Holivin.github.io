@@ -10,7 +10,7 @@ import {
   ModalOverlay,useDisclosure ,Modal,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter
 } from "@chakra-ui/react";
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
-import data from "../Content.js";
+import data from "../Content";
 import React, { useState, useEffect} from "react";
 const AboutPage =() => {
   const [scroll, setScroll] = useState({
