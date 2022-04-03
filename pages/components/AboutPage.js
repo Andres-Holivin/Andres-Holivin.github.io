@@ -7,17 +7,20 @@ import {
   Icon,
   IconButton,
   Image,
-  Text
+  Text,
+  ModalOverlay,useDisclosure ,Button,Modal,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter
 } from "@chakra-ui/react";
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 import data from "../content";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect} from "react";
 const AboutPage =() => {
   const [scroll, setScroll] = useState({
     left: false,
     right: false
   });
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const ref = React.createRef();
+  const [image,setImage]=useState();
   console.log(ref);
   useEffect(() => {
     return console.log("click");
@@ -41,7 +44,7 @@ const AboutPage =() => {
       scrollAmount += Math.abs(scroll);
       if (scrollAmount >= distance) clearInterval(sliderTime);
     }, interval);
-  };
+  };  
   return (
     <Box
       style={{ position: "relative" }}
@@ -138,12 +141,13 @@ const AboutPage =() => {
         <Box maxW="full" ref={ref} overflow="hidden" marginY="20px">
           <Box display="flex" gap="6" w="max-content">
             {data.certificat.map((item, key) => (
-              <Box key={key}>
+              <Box key={key} as="button" onClick={() => {setImage(item.photo);onOpen()}}>                
                 <Image
+                // as="button"
                   rounded="md"
                   w="420px"
                   h="300px"
-                  src="image/itBinus.jpeg"
+                  src={item.photo}
                   alt="image"
                 />
               </Box>
@@ -151,6 +155,27 @@ const AboutPage =() => {
           </Box>
         </Box>
       </Box>
+      <Modal isCentered size="6xl" isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay 
+          bg='blackAlpha.100'
+          backdropFilter='blur(1px)'/>
+        <ModalContent >
+          <ModalHeader></ModalHeader>
+          <ModalCloseButton  _focus={{ boxShadow: "0 0 0 0 transparent" }}/>
+          <ModalBody>
+            <Image
+              rounded="md"
+              w="full"
+              h="80vh"
+              src={image}
+              alt="image"
+            />
+          </ModalBody>
+          <ModalFooter>
+            {/* <Button onClick={onClose} _focus={{ boxShadow: "0 0 0 0 transparent" }}>Close</Button> */}
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </Box>
   );
 };

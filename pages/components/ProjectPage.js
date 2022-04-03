@@ -83,12 +83,12 @@ const CardProject = (props) => {
         <Heading size="md">Project ShowCase</Heading>
         <Text>hello</Text>
         <Text fontSize="xl">(xl) In love with React & Next</Text>
-        <Box display="flex" justifyContent="end" gap="3">
+        <Box display="flex" justifyContent="end" gap="0">
           {props.iconData.map((item,key)=>(
 
                 <IconButton
                 key={key}
-            colorScheme="blackAlpha"
+            colorScheme="black"
             variant="ghost"
             icon={item}
             _hover={{

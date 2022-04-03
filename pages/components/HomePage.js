@@ -1,22 +1,11 @@
 import { Box, Heading, Button, Image, Text } from "@chakra-ui/react";
 import { IoArrowDown } from "react-icons/io5";
-import {
-  FaGithubSquare,
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaLinkedin
-} from "react-icons/fa";
 import "animate.css";
-import { IconButton, Icon } from "@chakra-ui/react";
+import { IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll/modules";
+import data from "../content";
 
 const HomePage= () => {
-  const icons = [
-    <Icon key={1} as={FaGithubSquare} color="white" boxSize={8} />,
-    <Icon key={2} as={FaFacebookSquare} color="white" boxSize={8} />,
-    <Icon key={3} as={FaInstagramSquare} color="white" boxSize={8} />,
-    <Icon key={4} as={FaLinkedin} color="white" boxSize={8} />
-  ];
   return (
     <Box
       id="home"
@@ -69,8 +58,8 @@ const HomePage= () => {
             <Button colorScheme="blue">Download CV</Button>
           </Box>
           <Box display="flex" columnGap="2" justifyContent="center">
-            {icons.map((item, key) => (
-              <ItemIcon key={key} iconData={item} />
+            {data.contact.map((item, key) => (
+              <ItemIcon key={key} iconData={item.icon} action={item.action}/>
             ))}
           </Box>
         </Box>
@@ -96,6 +85,9 @@ export default HomePage;
 const ItemIcon = (props) => {
   return (
     <IconButton
+      onClick={()=>{
+        window.open(props.action);
+      }}
       colorScheme="telegram"
       variant="ghost"
       icon={props.iconData}
