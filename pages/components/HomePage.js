@@ -10,12 +10,12 @@ import "animate.css";
 import { IconButton, Icon } from "@chakra-ui/react";
 import { Link } from "react-scroll/modules";
 
-export default () => {
+const HomePage= () => {
   const icons = [
-    <Icon as={FaGithubSquare} color="white" boxSize={8} />,
-    <Icon as={FaFacebookSquare} color="white" boxSize={8} />,
-    <Icon as={FaInstagramSquare} color="white" boxSize={8} />,
-    <Icon as={FaLinkedin} color="white" boxSize={8} />
+    <Icon key={1} as={FaGithubSquare} color="white" boxSize={8} />,
+    <Icon key={2} as={FaFacebookSquare} color="white" boxSize={8} />,
+    <Icon key={3} as={FaInstagramSquare} color="white" boxSize={8} />,
+    <Icon key={4} as={FaLinkedin} color="white" boxSize={8} />
   ];
   return (
     <Box
@@ -52,7 +52,7 @@ export default () => {
               {/* Hi, My name */}
             </Text>
             <Text fontSize="4xl" fontWeight="bold" fontFamily="sans-serif">
-              Hi, I'm Andres Holivin
+              Hi, I&apos;m Andres Holivin
             </Text>
           </Box>
           <Box display="flex" flexDir="column" alignItems="start">
@@ -62,13 +62,13 @@ export default () => {
               fontFamily="sans-serif"
               textAlign="center"
             >
-              Application developer & Software Engineer
+              Application developer &amp; Software Engineer
             </Text>
           </Box>
           <Box paddingY="20px">
             <Button colorScheme="blue">Download CV</Button>
           </Box>
-          <Box display="flex" columnGap="4" justifyContent="center">
+          <Box display="flex" columnGap="2" justifyContent="center">
             {icons.map((item, key) => (
               <ItemIcon key={key} iconData={item} />
             ))}
@@ -92,6 +92,7 @@ export default () => {
     </Box>
   );
 };
+export default HomePage;
 const ItemIcon = (props) => {
   return (
     <IconButton
@@ -99,7 +100,7 @@ const ItemIcon = (props) => {
       variant="ghost"
       icon={props.iconData}
       _hover={{
-        bg: "#525252"
+        transform:"scale(1.2)"
       }}
       _active={{
         bg: "#808080"

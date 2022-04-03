@@ -12,7 +12,7 @@ import {
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
 import data from "../content";
 import React, { useState, useEffect } from "react";
-export default () => {
+const AboutPage =() => {
   const [scroll, setScroll] = useState({
     left: false,
     right: false
@@ -52,7 +52,8 @@ export default () => {
       flexDir="column"
       display="flex"
       paddingTop="100px"
-      bgGradient="linear(black 10%,gray.900 30%,gray.600,gray.300,white )"
+      sx={{'background-image':'linear-gradient(black ,black,gray,white)'}}
+      // bgGradient="linear(black 10%,gray.900 30%,gray.600,gray.300,white )"
     >
       <Box display="flex" flexDir="column" alignItems="center">
         <Heading size="lg" textAlign="center">
@@ -60,9 +61,9 @@ export default () => {
         </Heading>
         <Box width="650px" marginY="20px">
           <Text fontSize="xl" textAlign="justify">
-            &nbsp; Hello my is name Andres Holivin. I'm anthusias with software
-            and application developer. I'm intrested the new technology and I'm
-            always looking for new challenges. I'm passionate about back-end,
+            &nbsp; Hello my is name Andres Holivin. I&apos;m anthusias with software
+            and application developer. I&apos;m intrested the new technology and I&apos;m
+            always looking for new challenges. I&apos;m passionate about back-end,
             mobile, devops, and research the new technology to implement in a
             application.
           </Text>
@@ -89,6 +90,7 @@ export default () => {
                   height="150px"
                   objectFit="contain"
                   borderRadius="xl"
+                  alt="image"
                 />
               </Box>
               <Box
@@ -142,6 +144,7 @@ export default () => {
                   w="420px"
                   h="300px"
                   src="image/itBinus.jpeg"
+                  alt="image"
                 />
               </Box>
             ))}
@@ -151,3 +154,5 @@ export default () => {
     </Box>
   );
 };
+
+export default AboutPage;

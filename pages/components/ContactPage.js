@@ -1,16 +1,35 @@
-import { Box } from "@chakra-ui/react";
+import { Box,Heading,Text,Button} from "@chakra-ui/react";
 
-export default () => {
+const ContactPage = () => {
   return (
     <Box
       id="contact"
-      minH="100vh"
+      minH="fit-content"
       display="flex"
       justifyContent="center"
       alignItems="center"
-      //   bgGradient="linear(white ,gray.100,gray.300,gray.600,gray.900  )"
+      paddingX="80px"
+      paddingY="220px"
+      sx={{'background-image':'linear-gradient(white,gray,black ,black)'}}
     >
-      <Box>Contact</Box>
+      <Box h="480px" paddingX="180px" bgColor="blackAlpha.800" textColor="white" display="flex" flexDir="column" justifyContent="center" gap="8" rounded="lg" shadow="lg" alignItems="center">
+        <Heading size="xl">Say Hello To Me</Heading>
+        <Text fontSize="xl" textAlign="center">I&apos;m looking for any new opportunites and new knowledge. My mail always open for sharing and question. I always do my best for everything i do. Say hi to me with below button ! </Text>
+        <Button variant='outline' 
+        border='2px'
+        _hover={{
+          bg:"gray.600"
+        }}
+        _active={{
+          bg:"gray.500"
+        }}
+        _focus={{
+          boxShadow:
+            '0 0 0 0 transparent',
+        }}        
+        >Say Hello</Button>
+      </Box>
     </Box>
   );
 };
+export default ContactPage;

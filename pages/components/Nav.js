@@ -1,14 +1,14 @@
 import { Box, Button, Grid, GridItem, Image } from "@chakra-ui/react";
 import { Link } from "react-scroll/modules";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useState,useEffect } from 'react'
 
-export default function Nav() {
+const Nav=() =>{
   const [scroll, setScroll] = useState();
   const [windowHeight, setWindowHeight] = useState();
   const handleScroll = (e) => {
     console.log(e);
     setScroll(parseInt(window.scrollY));
-    setWindowHeight(1418 + parseInt(window.innerHeight) - 60);
+    setWindowHeight(2218 + parseInt(window.innerHeight) - 60);
   };
 
   useEffect(() => {
@@ -18,8 +18,9 @@ export default function Nav() {
   return (
     <Box
       style={{
-        backgroundColor:
-          scroll > windowHeight ? "rgb(0, 0, 0,0.5)" : "transparent",
+        // backgroundColor:
+        //   scroll > windowHeight ? "rgb(0, 0, 0,1)" : "transparent",
+        backgroundColor:"rgb(60, 60, 60,0.3)",
         transition: "all .5s ease",
         WebkitTransition: "all .5s ease",
         MozTransition: "all .5s ease"
@@ -42,6 +43,7 @@ export default function Nav() {
             width="150px"
             height="50px"
             objectFit="fill"
+            alt="image"
           />
         </GridItem>
         <GridItem
@@ -124,3 +126,4 @@ export default function Nav() {
     </Box>
   );
 }
+export default Nav;
