@@ -55,7 +55,9 @@ const HomePage= () => {
             </Text>
           </Box>
           <Box paddingY="20px">
-            <Button colorScheme="blue">Download CV</Button>
+            <Button colorScheme="blue" onClick={()=>{
+              window.open("https://ik.imagekit.io/andresholivin/Portofolio/CV_DsQooljTR.pdf?ik-sdk-version=javascript-1.4.3&updatedAt=1649064905768");
+            }}>Download CV</Button>
           </Box>
           <Box display="flex" columnGap="2" justifyContent="center">
             {Content.contact.map((item, key) => (

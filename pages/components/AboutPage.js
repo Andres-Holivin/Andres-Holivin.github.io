@@ -123,7 +123,7 @@ const AboutPage =() => {
               _hover={{ bg: "#454545" }}
               _active={{ bg: "#808080" }}
               _focus={{ boxShadow: "0 0 0 0 transparent" }}
-              onClick={() => refScroll(-25, 30, 100)}
+              onClick={() => refScroll(-150, 80, 300)}
               isDisabled={scroll.left}
             />
             <IconButton
@@ -132,13 +132,13 @@ const AboutPage =() => {
               _hover={{ bg: "#454545" }}
               _active={{ bg: "#808080" }}
               _focus={{ boxShadow: "0 0 0 0 transparent" }}
-              onClick={() => refScroll(25, 30, 100)}
+              onClick={() => refScroll(150, 80, 300)}
               isDisabled={scroll.right}
             />
           </Box>
         </Box>
         <Box maxW="full" ref={ref} overflow="hidden" marginY="20px">
-          <Box display="flex" gap="6" w="max-content">
+          <Box display="flex" gap="6" w="max-content" paddingBottom="10px">
             {Content.certificat.map((item, key) => (
               <Box key={key} as="button" onClick={() => {setImage(item.photo);onOpen()}}>                
                 <Image
@@ -156,8 +156,8 @@ const AboutPage =() => {
       </Box>
       <Modal isCentered size="6xl" isOpen={isOpen} onClose={onClose}>
         <ModalOverlay 
-          bg='blackAlpha.100'
-          backdropFilter='blur(1px)'/>
+          bg='blackAlpha.400'
+          backdropFilter='blur(2px)'/>
         <ModalContent >
           <ModalHeader></ModalHeader>
           <ModalCloseButton  _focus={{ boxShadow: "0 0 0 0 transparent" }}/>

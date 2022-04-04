@@ -10,22 +10,24 @@ export default function Home() {
     <ChakraProvider>
         <style global jsx>{`
           ::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
+            height:10px;         
           }
           
           ::-webkit-scrollbar-track {
             background-color: black;
+            border-radius: 10px;
           }
           
           ::-webkit-scrollbar-thumb {
-            background-color: white;
+            background-color: #B0B0B0;
             border-radius: 10px;
             border: 1px solid transparent;
             background-clip: content-box;
           }
           
           ::-webkit-scrollbar-thumb:hover {
-            background-color: #a8bbbf;
+            background-color: #CFCFCF;
           }
         `}</style>
       <div className="container">
