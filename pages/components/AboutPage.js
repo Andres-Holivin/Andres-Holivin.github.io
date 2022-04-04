@@ -10,7 +10,7 @@ import {
   ModalOverlay,useDisclosure ,Modal,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter
 } from "@chakra-ui/react";
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
-import data from "../Content";
+import {Content} from "../../Content";
 import React, { useState, useEffect} from "react";
 const AboutPage =() => {
   const [scroll, setScroll] = useState({
@@ -83,7 +83,7 @@ const AboutPage =() => {
           templateColumns="repeat(2,1fr)"
           paddingX="10vw"
         >
-          {data.experience.map((item, key) => (
+          {Content.experience.map((item, key) => (
             <Flex key={key} padding="0px" gap="15px" justifyContent="center">
               <Box>
                 <Image
@@ -139,7 +139,7 @@ const AboutPage =() => {
         </Box>
         <Box maxW="full" ref={ref} overflow="hidden" marginY="20px">
           <Box display="flex" gap="6" w="max-content">
-            {data.certificat.map((item, key) => (
+            {Content.certificat.map((item, key) => (
               <Box key={key} as="button" onClick={() => {setImage(item.photo);onOpen()}}>                
                 <Image
                 // as="button"

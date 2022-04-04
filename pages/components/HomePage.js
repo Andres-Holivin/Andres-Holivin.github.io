@@ -3,7 +3,7 @@ import { IoArrowDown } from "react-icons/io5";
 import "animate.css";
 import { IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll/modules";
-import data from "../Content";
+import {Content} from "../../Content";
 
 const HomePage= () => {
   return (
@@ -58,7 +58,7 @@ const HomePage= () => {
             <Button colorScheme="blue">Download CV</Button>
           </Box>
           <Box display="flex" columnGap="2" justifyContent="center">
-            {data.contact.map((item, key) => (
+            {Content.contact.map((item, key) => (
               <ItemIcon key={key} iconData={item.icon} action={item.action}/>
             ))}
           </Box>
