@@ -10,46 +10,29 @@ import {
 } from "@chakra-ui/react";
 import { FaGlobeAsia, FaGithub } from "react-icons/fa";
 import { IoLogoGooglePlaystore } from "react-icons/io5";
+import { Content } from "../../Content";
 
 const ProjectPage = () => {
   const icons = [
     {
       id: 1,
-      title: "ToList",
-      desc: "Desc1",
-      icons: [
-        <Icon key={1} as={FaGlobeAsia} />,
-        <Icon key={1} as={FaGithub} />,
-        <Icon key={1} as={IoLogoGooglePlaystore} />,
-      ],
-    },
-    {
-      id: 2,
-      title: "hello2",
-      desc: "Desc2",
-      icons: [
-        <Icon key={1} as={FaGlobeAsia} />,
-        <Icon key={1} as={FaGithub} />,
-        <Icon key={1} as={IoLogoGooglePlaystore} />,
-      ],
-    },
-    {
-      id: 3,
-      title: "hello3",
+      title: "LisTo",
       desc: "Desc3",
+      image:
+        "https://appimg2.dbankcdn.com/application/screenshut5/1078/996c362d6ec34336a9a6d5984148e23f.jpg",
       icons: [
         {
           link: "https://appgallery.huawei.com/app/C105260341",
           icon: <Icon key={1} as={FaGlobeAsia} />,
         },
         {
-          link: "https://appgallery.huawei.com/app/C105260341",
+          link: "https://github.com/holivin21/LisTo",
           icon: <Icon key={1} as={FaGithub} />,
         },
-        {
-          link: "https://appgallery.huawei.com/app/C105260341",
-          icon: <Icon key={1} as={IoLogoGooglePlaystore} />,
-        },
+        // {
+        //   link: "https://appgallery.huawei.com/app/C105260341",
+        //   icon: <Icon key={1} as={IoLogoGooglePlaystore} />,
+        // },
       ],
     },
   ];
@@ -88,7 +71,7 @@ const ProjectPage = () => {
                 clients achieve success in the digital world.
               </Text>
             </Box>
-            {getProject(icons)[0]}
+            {getProject(Content.project)[0]}
           </Box>
         </GridItem>
         <GridItem
@@ -104,7 +87,7 @@ const ProjectPage = () => {
             maxW="fit-content"
             marginLeft="40px"
           >
-            {getProject(icons)[1]}
+            {getProject(Content.project)[1]}
           </Box>
         </GridItem>
       </Grid>
@@ -119,6 +102,7 @@ const getProject = (projects) => {
       ? content1.push(
           <CardProject
             key={i}
+            image={projects[i]["image"]}
             title={projects[i]["title"]}
             desc={projects[i]["desc"]}
             iconData={projects[i]["icons"]}
@@ -127,6 +111,7 @@ const getProject = (projects) => {
       : content2.push(
           <CardProject
             key={i}
+            image={projects[i]["image"]}
             title={projects[i]["title"]}
             desc={projects[i]["desc"]}
             iconData={projects[i]["icons"]}
@@ -137,20 +122,24 @@ const getProject = (projects) => {
 };
 const CardProject = (props) => {
   return (
-    <Box shadow="xl" rounded="md" marginY="10px">
-      <Image
-        width="450px"
-        height="380px"
-        src="image/itBinus.jpeg"
-        roundedTop="md"
-        alt="image"
-      />
+    <Box shadow="2xl" rounded="md" marginY="10px" w="md">
+      <Box display="flex" justifyContent="center">
+        <Image
+          height="380px"
+          fit="contain"
+          src={props.image}
+          roundedTop="md"
+          alt="image"
+        />
+      </Box>
       <Box padding="20px" display="flex" flexDirection="column" gap="1">
         <Heading size="md">{props.title}</Heading>
-        <Text fontSize="xl">{props.desc}</Text>
+        <Text textAlign="justify" fontSize="xl">
+          {props.desc}
+        </Text>
         <Box display="flex" justifyContent="end" gap="0">
           {props.iconData.map((item, key) => (
-            <CustomIconButton key={key} item={item} />
+            <CustomIconButton key={key} item={item.icon} link={item.link} />
           ))}
         </Box>
       </Box>
@@ -160,9 +149,9 @@ const CardProject = (props) => {
 const CustomIconButton = (props) => {
   return (
     <IconButton
-      onclick={() => {
+      onClick={(e) => {
         e.preventDefault();
-        window.location.href = "http://google.com";
+        window.location.href = props.link;
       }}
       // key={key}
       colorScheme="black"

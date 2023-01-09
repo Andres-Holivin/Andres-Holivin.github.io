@@ -7,26 +7,28 @@ import {
   IconButton,
   Image,
   Text,
-  ModalOverlay,useDisclosure ,Modal,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter
+  ModalOverlay,
+  useDisclosure,
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
 } from "@chakra-ui/react";
 import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
-import {Content} from "../../Content";
-import React, { useState, useEffect} from "react";
-const AboutPage =() => {
+import { Content } from "../../Content";
+import React, { useState, useEffect } from "react";
+const AboutPage = () => {
   const [scroll, setScroll] = useState({
     left: false,
-    right: false
+    right: false,
   });
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const ref = React.createRef();
-  const [image,setImage]=useState();
-  console.log(ref);
-  useEffect(() => {
-    return console.log("click");
-  }, []);
+  const [image, setImage] = useState();
   const refScroll = (scroll, interval, distance) => {
     let scrollAmount = 0;
-    console.log(ref.current.scrollLeft);
     // if (ref.current.scrollLeft === ref.current.scrollWidth) {
     //   setScroll({ left: false, right: true });
     // } else if (ref.current.scrollLeft === 0) {
@@ -43,7 +45,7 @@ const AboutPage =() => {
       scrollAmount += Math.abs(scroll);
       if (scrollAmount >= distance) clearInterval(sliderTime);
     }, interval);
-  };  
+  };
   return (
     <Box
       style={{ position: "relative" }}
@@ -54,7 +56,7 @@ const AboutPage =() => {
       flexDir="column"
       display="flex"
       paddingTop="100px"
-      sx={{'background-image':'linear-gradient(black ,black,gray,white)'}}
+      sx={{ "background-image": "linear-gradient(black ,black,gray,white)" }}
       // bgGradient="linear(black 10%,gray.900 30%,gray.600,gray.300,white )"
     >
       <Box display="flex" flexDir="column" alignItems="center">
@@ -63,11 +65,11 @@ const AboutPage =() => {
         </Heading>
         <Box width="650px" marginY="20px">
           <Text fontSize="xl" textAlign="justify">
-            &nbsp; Hello my is name Andres Holivin. I&apos;m anthusias with software
-            and application developer. I&apos;m intrested the new technology and I&apos;m
-            always looking for new challenges. I&apos;m passionate about back-end,
-            mobile, devops, and research the new technology to implement in a
-            application.
+            &nbsp; Hello my is name Andres Holivin. I&apos;m anthusias with
+            software and application developer. I&apos;m intrested the new
+            technology and I&apos;m always looking for new challenges. I&apos;m
+            passionate about back-end, mobile, devops, and research the new
+            technology to implement in a application.
           </Text>
         </Box>
       </Box>
@@ -140,9 +142,16 @@ const AboutPage =() => {
         <Box maxW="full" ref={ref} overflow="hidden" marginY="20px">
           <Box display="flex" gap="6" w="max-content" paddingBottom="10px">
             {Content.certificat.map((item, key) => (
-              <Box key={key} as="button" onClick={() => {setImage(item.photo);onOpen()}}>                
+              <Box
+                key={key}
+                as="button"
+                onClick={() => {
+                  setImage(item.photo);
+                  onOpen();
+                }}
+              >
                 <Image
-                // as="button"
+                  // as="button"
                   rounded="md"
                   w="420px"
                   h="300px"
@@ -155,20 +164,12 @@ const AboutPage =() => {
         </Box>
       </Box>
       <Modal isCentered size="6xl" isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay 
-          bg='blackAlpha.400'
-          backdropFilter='blur(2px)'/>
-        <ModalContent >
+        <ModalOverlay bg="blackAlpha.400" backdropFilter="blur(2px)" />
+        <ModalContent>
           <ModalHeader></ModalHeader>
-          <ModalCloseButton  _focus={{ boxShadow: "0 0 0 0 transparent" }}/>
+          <ModalCloseButton _focus={{ boxShadow: "0 0 0 0 transparent" }} />
           <ModalBody>
-            <Image
-              rounded="md"
-              w="full"
-              h="75vh"
-              src={image}
-              alt="image"
-            />
+            <Image rounded="md" w="full" h="75vh" src={image} alt="image" />
           </ModalBody>
           <ModalFooter>
             {/* <Button onClick={onClose} _focus={{ boxShadow: "0 0 0 0 transparent" }}>Close</Button> */}

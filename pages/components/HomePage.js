@@ -3,9 +3,9 @@ import { IoArrowDown } from "react-icons/io5";
 import "animate.css";
 import { IconButton } from "@chakra-ui/react";
 import { Link } from "react-scroll/modules";
-import {Content} from "../../Content";
+import { Content } from "../../Content";
 
-const HomePage= () => {
+const HomePage = () => {
   return (
     <Box
       id="home"
@@ -55,13 +55,20 @@ const HomePage= () => {
             </Text>
           </Box>
           <Box paddingY="20px">
-            <Button colorScheme="blue" onClick={()=>{
-              window.open("https://ik.imagekit.io/andresholivin/Portofolio/CV_DsQooljTR.pdf?ik-sdk-version=javascript-1.4.3&updatedAt=1649064905768");
-            }}>Download CV</Button>
+            <Button
+              colorScheme="blue"
+              onClick={() => {
+                window.open(
+                  "https://res.cloudinary.com/holivin21/image/upload/v1673235317/AndresHolivin_p0ctff.pdf"
+                );
+              }}
+            >
+              Download CV
+            </Button>
           </Box>
           <Box display="flex" columnGap="2" justifyContent="center">
             {Content.contact.map((item, key) => (
-              <ItemIcon key={key} iconData={item.icon} action={item.action}/>
+              <ItemIcon key={key} iconData={item.icon} action={item.action} />
             ))}
           </Box>
         </Box>
@@ -87,20 +94,20 @@ export default HomePage;
 const ItemIcon = (props) => {
   return (
     <IconButton
-      onClick={()=>{
+      onClick={() => {
         window.open(props.action);
       }}
       colorScheme="telegram"
       variant="ghost"
       icon={props.iconData}
       _hover={{
-        transform:"scale(1.2)"
+        transform: "scale(1.2)",
       }}
       _active={{
-        bg: "#808080"
+        bg: "#808080",
       }}
       _focus={{
-        boxShadow: "0 0 0 0 transparent"
+        boxShadow: "0 0 0 0 transparent",
       }}
     />
   );
