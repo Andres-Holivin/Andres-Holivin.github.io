@@ -9,9 +9,10 @@ import {
   Text,
   ModalOverlay,useDisclosure ,Modal,ModalContent,ModalHeader,ModalCloseButton,ModalBody,ModalFooter
 } from "@chakra-ui/react";
-import { FaArrowCircleRight, FaArrowCircleLeft } from "react-icons/fa";
+import { FaArrowCircleRight, FaArrowCircleLeft,FaHandPointDown } from "react-icons/fa";
 import {Content} from "../../Content";
 import React, { useState, useEffect} from "react";
+import { ItemIcon } from "./HomePage";
 const AboutPage =() => {
   const [scroll, setScroll] = useState({
     left: false,
@@ -68,10 +69,25 @@ const AboutPage =() => {
             always looking for new challenges. I&apos;m passionate about back-end,
             mobile, devops, and research the new technology to implement in a
             application.
-          </Text>
+          </Text>        
         </Box>
+        <br/>
+          <Box display="flex" gap={4} alignItems="center" bg="blue.600" px="4" py="2" borderRadius="25">
+            <Text fontSize="xl" textAlign="justify">
+              For More Detail about My Experiences, Please cek my Linkedin
+            </Text>
+            <Box position="relative" >
+              <Box position="absolute" top="-6" right="2" className="animate__animated animate__bounce animate__slower animate__infinite animate__delay-5s">
+                <Icon key={4} as={FaHandPointDown} color="white" boxSize={6} />
+              </Box>
+              <ItemIcon 
+              iconData={Content.contact.find((x)=>x.action.includes("linkedin")).icon} 
+              action={Content.contact.find((x)=>x.action.includes("linkedin")).action}
+              />
+            </Box>
+          </Box>
       </Box>
-      <Box justifySelf="start">
+      {/* <Box justifySelf="start">
         <Heading textAlign="center" size="md" marginBottom="30px">
           My Experience
         </Heading>
@@ -171,10 +187,9 @@ const AboutPage =() => {
             />
           </ModalBody>
           <ModalFooter>
-            {/* <Button onClick={onClose} _focus={{ boxShadow: "0 0 0 0 transparent" }}>Close</Button> */}
           </ModalFooter>
-        </ModalContent>
-      </Modal>
+        </ModalContent> */}
+      {/* </Modal> */}
     </Box>
   );
 };
