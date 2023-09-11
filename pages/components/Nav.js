@@ -1,12 +1,11 @@
 import { Box, Button, Grid, GridItem, Image } from "@chakra-ui/react";
 import { Link } from "react-scroll/modules";
-import { useState,useEffect } from 'react'
+import { useState, useEffect } from "react";
 
-const Nav=() =>{
+const Nav = () => {
   const [scroll, setScroll] = useState();
   const [windowHeight, setWindowHeight] = useState();
   const handleScroll = (e) => {
-    console.log(e);
     setScroll(parseInt(window.scrollY));
     setWindowHeight(2218 + parseInt(window.innerHeight) - 60);
   };
@@ -20,10 +19,10 @@ const Nav=() =>{
       style={{
         // backgroundColor:
         //   scroll > windowHeight ? "rgb(0, 0, 0,1)" : "transparent",
-        backgroundColor:"rgb(60, 60, 60,0.3)",
+        backgroundColor: "rgb(60, 60, 60,0.3)",
         transition: "all .5s ease",
         WebkitTransition: "all .5s ease",
-        MozTransition: "all .5s ease"
+        MozTransition: "all .5s ease",
       }}
       position="fixed"
       zIndex="10"
@@ -64,7 +63,7 @@ const Nav=() =>{
               colorScheme="white"
               variant="link"
               _focus={{
-                boxShadow: "0 0 0 0 transparent"
+                boxShadow: "0 0 0 0 transparent",
               }}
             >
               Home
@@ -81,7 +80,7 @@ const Nav=() =>{
               colorScheme="white"
               variant="link"
               _focus={{
-                boxShadow: "0 0 0 0 transparent"
+                boxShadow: "0 0 0 0 transparent",
               }}
             >
               About
@@ -98,7 +97,7 @@ const Nav=() =>{
               colorScheme="white"
               variant="link"
               _focus={{
-                boxShadow: "0 0 0 0 transparent"
+                boxShadow: "0 0 0 0 transparent",
               }}
             >
               Project
@@ -115,7 +114,7 @@ const Nav=() =>{
               colorScheme="white"
               variant="link"
               _focus={{
-                boxShadow: "0 0 0 0 transparent"
+                boxShadow: "0 0 0 0 transparent",
               }}
             >
               Contact
@@ -125,5 +124,5 @@ const Nav=() =>{
       </Grid>
     </Box>
   );
-}
+};
 export default Nav;
