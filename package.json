@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "export": "next build && next export",
+    "deploy": "next build && touch out/.nojekyll && git add -A && git commit -m 'Deploy to GitHub Pages' && git push"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
