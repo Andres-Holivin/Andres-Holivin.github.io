@@ -168,27 +168,6 @@ export default function ContactPage() {
                 </VStack>
               </form>
             </Box>
-
-            <HStack spacing={6} pt={4}>
-              {portfolioContent.contact
-                .filter((c) => c.action.includes('github') || c.action.includes('linkedin'))
-                .map((item) => (
-                  <Button
-                    key={item.action}
-                    variant="outline"
-                    size="lg"
-                    leftIcon={<Icon as={item.iconType} />}
-                    onClick={() => window.open(item.action, '_blank')}
-                    _hover={{
-                      bg: 'brand.500',
-                      borderColor: 'brand.500',
-                      transform: 'translateY(-2px)',
-                    }}
-                  >
-                    {item.label}
-                  </Button>
-                ))}
-            </HStack>
           </VStack>
         </MotionBox>
       </Container>
