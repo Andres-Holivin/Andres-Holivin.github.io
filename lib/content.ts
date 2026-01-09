@@ -8,6 +8,7 @@ import {
     FaGithub,
     FaStore,
     FaAppStoreIos,
+    FaMedium
 } from "react-icons/fa";
 import { AiFillCodeSandboxCircle } from "react-icons/ai";
 import { IconType } from 'react-icons';
@@ -85,7 +86,7 @@ function getFallbackData(): PortfolioContent {
     return {
         contact: [
             {
-                action: "https://github.com/holivin21",
+                action: "https://github.com/Andres-Holivin",
                 iconType: FaGithubSquare,
                 label: "GitHub (holivin21)"
             },
@@ -95,7 +96,7 @@ function getFallbackData(): PortfolioContent {
                 label: "Facebook"
             },
             {
-                action: "https://github.com/Andres-Holivin",
+                action: "https://www.instagram.com/andresholivin/",
                 iconType: FaInstagramSquare,
                 label: "Instagram"
             },
@@ -108,14 +109,19 @@ function getFallbackData(): PortfolioContent {
                 action: "https://dev.to/holivin21",
                 iconType: FaDev,
                 label: "Dev.to"
+            },
+            {
+                action: "https://medium.com/@andres-holivin",
+                iconType: FaMedium,
+                label: "Medium"
             }
         ],
         experience: [
             {
-                title: "Bachelor Degree",
+                title: "Bachelor Degree (GPA 3.63)",
                 company: "Bina Nusantara University",
                 start: "2019",
-                end: "Present",
+                end: "2023",
                 image: "/image/binus.jpeg",
             },
             {
